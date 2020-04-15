@@ -1,0 +1,86 @@
+import java.util.Scanner;
+class miniproject
+
+{
+	public static void main(String args[])
+	{
+		while(true)
+		{
+			account a= new account();
+			a.execute();
+		}
+	}
+}
+class details
+{
+	 int id = 20200410;
+	 int billunit=1724;
+	 
+}
+class account extends details
+{
+	public void execute()
+	{
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter your customer id-");
+		int x=sc.nextInt();
+		System.out.println("Enter your billing unit no.-");
+		int y=sc.nextInt();
+		if(x==id && y==billunit)
+		{
+			 pay p=new pay();
+			 p.function();
+		}
+	}
+}
+
+class pay extends account
+{
+	public void function()
+	{
+		    Scanner sc= new Scanner(System.in);
+			System.out.println("1.Display Details - ");
+			 System.out.println("2.Pay bill");
+			 System.out.println("3.exit");
+			 int choice=sc.nextInt();
+			 switch(choice)
+			 {
+			 	case 1: display_details();break;
+			 		
+			 	case 2: deposit();break;
+			 		
+			 	case 3:return ;
+			 }
+	}
+	public void display_details()
+	{
+		System.out.println("  customer id-"+id);
+		System.out.println("  billing unit-"+billunit);
+	}
+	public void deposit()
+	{
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter ur current reading of meter-");
+		int z= sc.nextInt();
+		if(z<100)
+		{
+			double i=3.05;
+			System.out.println("Payable amount="+z*i);
+		}
+	    else if(z>101&&z<300)
+		{
+			double i=6.95;
+			System.out.println("Payable amount="+z*i);
+		}
+		else if(z>301&&z<500)
+		{
+			double i=9.90;
+			System.out.println("Payable amount="+z*i);
+		}
+		else if(z>500)
+		{
+			double i=12.50;
+			System.out.println("Payable amount="+z*i);
+		}
+	}
+}
