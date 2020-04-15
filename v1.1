@@ -1,0 +1,34 @@
+import java.util.Scanner;
+class miniproject
+
+{
+	public static void main(String args[])
+	{
+		while(true)
+		{
+			account a= new account();
+			a.execute();
+		}
+	}
+}
+class details
+{
+	 int id = 20200410;
+	 int billunit=1724;
+	 
+}
+class account extends details
+{
+	public void execute()
+	{
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter your customer id-");
+		int x=sc.nextInt();
+		System.out.println("Enter your billing unit no.-");
+		int y=sc.nextInt();
+		if(x==id && y==billunit)
+		{
+			System.out.println("Working properly");
+		}
+	}
+}
