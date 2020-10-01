@@ -1,2 +1,2 @@
-# electricbilling_system
+# user_friendly_electricbilling_system
 Electric Billing System
